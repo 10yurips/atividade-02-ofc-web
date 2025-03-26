@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Esfera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        var raio, comprimento, area, volume, opcao;
+
+        do {
+            // Recebe o raio da esfera
+            raio = parseFloat(prompt("Informe o raio da esfera:"));
+            
+            // Calcula o comprimento, área e volume da esfera
+            comprimento = 2 * Math.PI * raio; // C = 2 * pi * r
+            area = Math.PI * Math.pow(raio, 2); // A = pi * r^2
+            volume = (4/3) * Math.PI * Math.pow(raio, 3); // V = (4/3) * pi * r^3
+
+            // Exibe os resultados
+            document.write(`<p>Raio informado: ${raio}</p>`);
+            document.write(`<p>Comprimento da esfera: ${comprimento.toFixed(2)} unidades</p>`);
+            document.write(`<p>Área da esfera: ${area.toFixed(2)} unidades quadradas</p>`);
+            document.write(`<p>Volume da esfera: ${volume.toFixed(2)} unidades cúbicas</p><hr>`);
+
+            // Pergunta se deseja continuar
+            opcao = confirm("Deseja informar outro raio?");
+        } while(opcao == true);
+    </script>
+</body>
+</html>
